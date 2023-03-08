@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block main %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Website - About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  </head>
+
+  <body>
+    {% include 'flash_messages.html' %}
+    <h1>Add New Property</h1>
+    <div class="form">
+      <form action="/properties/create" method="post">
+      {{ form.csrf_token }}
+
+      <br>
+      <br>
+
+      <div class="first">
+        {{ form.title.label }}
+        <br>
+        {{ form.title(class="form-label") }}
+      </div>
+
+      <br>
+
+      <div>
+        {{form.description.label}}
+        <br>
+        {{form.description(class="form-des")}}
+      </div>
+
+      <br>
+
+      <div class="rooms">
+        <div>
+          {{form.rooms.label}}
+          <br>
+          {{form.rooms(class="form-rooms")}}
+        </div>
+        
+        <br>
+        
+        <div>
+          {{form.baths.label}}
+          <br>
+          {{form.baths(class="form-baths")}}
+        </div>
+      </div>
+
+      <br>
+
+      <div class="price">
+        <div>
+          {{form.price.label}}
+          <br>
+          {{form.price(class="form-price")}}
+        </div>
+        
+        <br>
+        
+        <div>
+          {{form.type.label}}
+          <br>
+          {{form.type(class="form-type")}}
+        </div>
+      </div>
+
+      <br>
+
+      <div>
+        {{form.location.label}}
+          <br>
+        {{form.location(class="form-location")}}
+      </div>
+
+      <br>
+
+      <div>
+        {{form.photo.label}}
+          <br>
+        {{form.photo(class="form-photo")}}
+      </div>
+
+      <br>
+  
+      <button class="btn1" type="submit">Add Property</button>
+      </form>
+      <br>
+    </div>
+    
+  </body>
+</html>
+{% endblock %}

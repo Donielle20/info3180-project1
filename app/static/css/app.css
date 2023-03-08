@@ -1,3 +1,77 @@
 body {
     padding-top: 5rem;
+    background-color: #f3f4f6;
+}
+
+.first{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    row-gap: 8px;
+}
+
+.btn1{
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(98, 98, 243);
+    color: white;
+}
+
+.form-label{
+    width: 1000px;
+    height: 45px;
+}
+
+.form-des{
+    width: 1000px;
+    height: 100px;
+}
+
+form{
+    margin: 2em;
+}
+
+.form{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.rooms{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+.form-rooms{
+    width: 400px;
+    height: 45px;
+}
+
+.form-baths{
+    width: 400px;
+    height: 45px;
+}
+
+.price{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+.form-price{
+    width: 400px;
+    height: 45px;
+}
+
+.form-type{
+    width: 400px;
+    height: 45px;
+}
+
+.form-location{
+    width: 400px;
+    height: 45px;
+}
+
+.form-photo{
+    height: 45px;
 }

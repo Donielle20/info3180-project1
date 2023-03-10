@@ -75,3 +75,58 @@ form{
 .form-photo{
     height: 45px;
 }
+
+li{
+    list-style: none;
+}
+
+.image{
+    width: 400px;
+    height: 250px;
+}
+
+.contain{
+    background-color: white;
+    width: 400px;
+    height: 420px;
+}
+
+.name{
+    /* margin: 15px; */
+    padding: 15px;
+}
+
+.add{
+    color: rgb(190, 189, 189);
+}
+
+.price1{
+    background-color: rgb(69, 152, 224);
+    width: 120px;
+    height: 35px;
+    color: white;
+    border-radius: 20px;
+    padding: 6.5px;
+}
+
+.set{
+    text-align: center;
+}
+
+.contain-btn{
+    background-color: rgb(69, 152, 224);
+    width: 400px;
+    height: 50px;
+    text-align: center;
+}
+
+.btn{
+    color: white;
+    font-size: 20px;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 25px;
+}

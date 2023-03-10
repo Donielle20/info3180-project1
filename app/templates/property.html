@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Website - About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  </head>
+
+  <body>
+    {% include 'flash_messages.html' %}
+    <h1>Properties</h1>
+
+    <br>
+    
+    <ul>
+      {% for a, b, c, d, e , f, g, h, i in property %}
+        <div class="contain">
+          <li><img src="{{url_for('get_image', filename=i)}}" alt="{{i}}" class="image"></li>
+          <div class="name">
+            <h4>{{b}}</h4>
+            <h6 class="add">{{f}}</h6>
+          
+            <div class="price1">
+              <h6 class="set">{{d}}</h6>
+            </div>
+          </div>
+
+          <!-- <div class="contain-btn">
+            <button class="btn">View Property</button>
+          </div> -->
+          <div class="contain-btn">
+            <form action="/properties/{{a}}" method="post" >
+              <button class="btn" type="submit">View Property</button>
+            </form>
+          </div>
+          
+        </div>
+      {% endfor %}
+    </ul>
+    <br>
+  </body>
+</html>
+{% endblock %}

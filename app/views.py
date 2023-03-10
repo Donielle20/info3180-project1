@@ -9,6 +9,9 @@ from app import app
 from flask import render_template, request, redirect, url_for, send_from_directory, flash
 from .forms import PropertyForm
 from werkzeug.utils import secure_filename
+from app.models import Property
+from app import db
+import psycopg2
 
 ###
 # Routing for your application.
@@ -54,11 +57,43 @@ def create():
 
             filename = secure_filename(photo.filename)
 
+            property = Property(title=title, description=description, rooms=rooms, baths=baths, price=price, type=type, location=location, filename=filename)
+
+            db.session.add(property)
+
+            db.session.commit()
+
+            print(filename)
+
             photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            return redirect(url_for('home'))
+            return redirect(url_for('show'))
 
+    flash_errors(myform)
     return render_template('createProperty.html', form=myform)
+
+@app.route('/properties')
+def show():
+    DB = connect_db()
+    cur = DB.cursor()
+    cur.execute('select * from property')
+    property = cur.fetchall()
+
+    return render_template('property.html', property = property)
+
+@app.route('/properties/<propertyid>', methods=['GET', 'POST'])
+def expand(propertyid):
+    
+    print(propertyid)
+
+    DB = connect_db()
+    cur = DB.cursor()
+    cur.execute('select * from property where id = propertyid')
+    id = cur.fetchall()
+
+    print(id)
+
+    return render_template('list_properties.html')
 
 # Display Flask WTF errors as Flash messages
 def flash_errors(form):
@@ -96,7 +131,7 @@ def page_not_found(error):
 def get_uploaded_images():
     rootdir = os.getcwd()
 
-    print(rootdir + app.config['UPLOAD_FOLDER'])
+    # print(rootdir + app.config['UPLOAD_FOLDER'])
 
     plist = []
     
@@ -108,3 +143,6 @@ def get_uploaded_images():
             plist.append(file)
 
     return plist
+
+def connect_db():
+    return psycopg2.connect(host="localhost", database="project1", user="project1", password="Vanvillabom16")

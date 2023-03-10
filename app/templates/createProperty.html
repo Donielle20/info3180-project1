@@ -12,7 +12,7 @@
     {% include 'flash_messages.html' %}
     <h1>Add New Property</h1>
     <div class="form">
-      <form action="/properties/create" method="post">
+      <form action="/properties/create" method="post" enctype="multipart/form-data">
       {{ form.csrf_token }}
 
       <br>

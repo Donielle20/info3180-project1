@@ -13,20 +13,22 @@ class Property(db.Model):
 
     title = db.Column(db.String(80))
     description = db.Column(db.String(100))
-    num_of_rooms = db.Column(db.String(80))
-    num_of_bath = db.Column(db.String(80))
+    rooms = db.Column(db.String(80))
+    baths = db.Column(db.String(80))
     price = db.Column(db.String(80))
     type = db.Column(db.String(80))
     location = db.Column(db.String(80))
+    filename = db.Column(db.String(80))
 
-    def __init__(self, title, description, num_of_rooms, num_of_bath, price, type, location):
+    def __init__(self, title, description, rooms, baths, price, type, location, filename):
         self.title = title
         self.description = description
-        self.num_of_rooms = num_of_rooms
-        self.num_of_bath = num_of_bath
+        self.rooms = rooms
+        self.baths = baths
         self.price = price
         self.type = type
         self.location = location
+        self.filename = filename
 
     def is_authenticated(self):
         return True

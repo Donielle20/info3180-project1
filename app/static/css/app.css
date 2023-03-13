@@ -113,6 +113,15 @@ li{
     text-align: center;
 }
 
+.type{
+    background-color: rgb(219, 200, 54);
+    width: 120px;
+    height: 35px;
+    color: white;
+    border-radius: 20px;
+    padding: 6.5px;
+}
+
 .contain-btn{
     background-color: rgb(69, 152, 224);
     width: 400px;
@@ -129,4 +138,46 @@ ul{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 25px;
+}
+
+.id-image{
+    width: 500px;
+    height: 420px;
+}
+
+.info-contain{
+    width: 550px;
+    height: 420px;
+    background-color: white;
+    padding: 2em;
+}
+
+.align{
+    display: grid;
+    grid-template-columns: 500px 500px;
+    column-gap: 1;
+}
+
+.side-by-side{
+    display: grid;
+    grid-template-columns: 140px 140px;
+}
+
+.id-contain{
+    width: 500px;
+}
+
+.side-room{
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+.real{
+    background-color: rgb(69, 152, 224);
+    width: 130px;
+    height: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }

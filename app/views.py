@@ -88,12 +88,12 @@ def expand(propertyid):
 
     DB = connect_db()
     cur = DB.cursor()
-    cur.execute('select * from property where id = propertyid')
+    cur.execute(f'select * from property where id = {propertyid}')
     id = cur.fetchall()
 
     print(id)
 
-    return render_template('list_properties.html')
+    return render_template('list_properties.html', id = id)
 
 # Display Flask WTF errors as Flash messages
 def flash_errors(form):

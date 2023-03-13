@@ -1,5 +1,61 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1>Helloworld</h1>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Website - About</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+    </head>
+
+    <body>
+        {% include 'flash_messages.html' %}
+
+        <div class="align">
+            {% for a, b, c, d, e , f, g, h, i in id %}
+                <div class="id-contain">
+                    <img src="{{url_for('get_image', filename=i)}}" alt="{{i}}" class="id-image">
+                </div>
+
+                <div class="info-contain">
+                    <h1>{{b}}</h1>
+
+                    <div class="side-by-side">
+                        <div class="price1">
+                            <h6 class="set">{{d}}</h6>
+                        </div>
+
+                        <div class="type">
+                            <h6 class="set">{{e}}</h6>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h6>{{c}}</h6>
+
+                    <br>
+
+                    <div class="side-room">
+                        <h6>{{g}} Bedrooms</h6>
+
+                        <h6>{{h}} Bathrooms</h6>
+                    </div>
+
+                    <br>
+
+                    <h6>{{f}}</h6>
+
+                    <br>
+
+                    <button class="real">Email Realtor</button>
+                    
+                </div>
+            {% endfor %}
+        </div>
+
+        <br>
+
+    </body>
+</html>
 {% endblock %}
